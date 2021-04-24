@@ -1,0 +1,32 @@
+{
+  "name": "sun-shutters",
+  "version": "1.0.0",
+  "description": "Open shutters on sunrise, close them on sunset!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedced19/sun-shutters.git"
+  },
+  "keywords": [
+    "shutters",
+    "sun",
+    "sunrise",
+    "sunset",
+    "clock"
+  ],
+  "author": "Cédric JUNG <cedced19@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cedced19/sun-shutters/issues"
+  },
+  "homepage": "https://github.com/cedced19/sun-shutters#readme",
+  "dependencies": {
+    "ht": "0.0.2",
+    "node-schedule": "^2.0.0",
+    "suncalc": "^1.8.0",
+    "tuya-switch-api": "git+https://github.com/cedced19/tuya-switch-api.git"
+  }
+}
