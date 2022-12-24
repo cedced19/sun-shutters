@@ -8,7 +8,6 @@ const addTime = require('./lib/add-time.js')
 
 const shutters = require('./shutters.json');
 const config = require('./config.json');
-const { addMinutes } = require('./lib/add-time.js');
 
 const myTuya = new Tuya(config.email, config.password, "eu", "33", "smart_life");
 
@@ -61,3 +60,8 @@ schedule.scheduleJob('0 0 16 * * *', function() {
         });
     });
 });
+
+// ================================================
+// Sun Shutter
+// ================================================
+console.log('Sun Shutter started.');

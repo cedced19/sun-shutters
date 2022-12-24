@@ -45,3 +45,20 @@ You also have to create a `config.json` file with:
     "long": 7.257013
 }
 ```
+
+## Docker
+
+Build docker image:
+```
+docker build -t sun-shutter .
+```
+
+Test:
+```
+docker-compose up -d
+```
+
+Docker compose:
+```
+docker-compose up -d
+```

@@ -1,0 +1,9 @@
+version: '3'
+services:
+  sun_shutter: 
+    image: sun-shutter
+    command: sh -c "node index.js"
+    restart: always
+    volumes:
+      - ./config.json:/app/config.json
+      - ./shutters.json:/app/shutters.json
