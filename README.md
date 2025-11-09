@@ -70,3 +70,8 @@ Share to [Docker Hub](https://hub.docker.com/r/cedced19/sun-shutters):
 docker tag sun-shutter:latest cedced19/sun-shutters:1.0
 docker push cedced19/sun-shutters:1.0
 ```
+
+Multiplatform
+```
+docker buildx build   --platform linux/amd64,linux/arm64   -t cedced19/sun-shutters:latest   --push .
+```
