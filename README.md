@@ -48,6 +48,26 @@ You also have to create a `config.json` file with:
 }
 ```
 
+## Close all shutters
+
+To close every shutter right away (no scheduling), run from `app/`:
+
+```
+node test-close.js --config /home/cjung/perso/server-config/sun-shutters
+```
+
+`--config` points to a directory containing both `config.json` and `shutters.json`.
+
+## Open all shutters
+
+To open every shutter right away (no scheduling), run from `app/`:
+
+```
+node test-open.js --config /home/cjung/perso/server-config/sun-shutters
+```
+
+`--config` points to a directory containing both `config.json` and `shutters.json`.
+
 ## Docker
 
 Build docker image:
