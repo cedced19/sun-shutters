@@ -6,4 +6,5 @@ services:
     restart: always
     volumes:
       - ./config.json:/app/config.json
+      - ./token.json:/app/token.json
       - ./shutters.json:/app/shutters.json
