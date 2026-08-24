@@ -1,4 +1,4 @@
-const Tuya = require('tuya-switch-api');
+const Tuya = require('./lib/tuya-switch-api');
 
 const suncalc = require('suncalc');
 const schedule = require('node-schedule');

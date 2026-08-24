@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const Tuya = require('tuya-switch-api');
+const Tuya = require('./lib/tuya-switch-api');
 
 const delay = require('./lib/delay.js');
 

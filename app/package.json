@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/cedced19/sun-shutters#readme",
   "dependencies": {
+    "got": "^11.8.2",
     "ht": "0.0.2",
     "node-schedule": "^2.0.0",
-    "suncalc": "^1.8.0",
-    "tuya-switch-api": "git+https://github.com/cedced19/tuya-switch-api.git"
+    "suncalc": "^1.8.0"
   }
 }
