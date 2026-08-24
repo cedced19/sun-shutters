@@ -28,14 +28,35 @@ const shutters = load('shutters.json');
 
 const myTuya = new Tuya(config.email, config.password, "eu", "33", "smart_life");
 
-async function openShutter(shutter) {
-    myTuya.open(shutter.id, function(err) {
-        if (err) {
-            console.log(`An error occured when trying to open ${shutter.name}.`, err);
-        } else {
-            console.log(`${shutter.name} opened.`);
+const maxAttempts = 10;
+
+function openWithRetry(shutter) {
+    return new Promise(function(resolve) {
+        let attempt = 0;
+        function go() {
+            myTuya.open(shutter.id, function(err) {
+                if (err) {
+                    attempt++;
+                    if (attempt < maxAttempts) {
+                        const wait = Math.min(60, 10 + attempt * 10);
+                        console.log(`Retrying to open ${shutter.name} (attempt ${attempt}/${maxAttempts}) in ${wait}s:`, err.message || err);
+                        setTimeout(go, wait * 1000);
+                    } else {
+                        console.log(`An error occured when trying to open ${shutter.name} after ${maxAttempts} attempts.`, err);
+                        resolve();
+                    }
+                } else {
+                    console.log(`${shutter.name} opened.`);
+                    resolve();
+                }
+            });
         }
+        go();
     });
+}
+
+async function openShutter(shutter) {
+    await openWithRetry(shutter);
     await delay.timer(20000);
 }
 
